@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Weather DB</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  {% block head %}
+  {% endblock %}
+</head>
+
+<body>
+  {% block msgs %}
+    {% with msgs = get_flashed_messages() %}
+      {% if msgs %}
+      <ul class="flashes">
+        {% for msg in msgs %}
+          <li>{{ msg }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    {% endwith %}
+  {% endblock %}
+  {% block header %}
+    <div class="header">
+      <p>
+      {% if current_user.is_authenticated %}
+        Hello, {{ current_user.name }} 
+      {% endif %}
+      </p>
+
+      <p>
+      <a href="{{ url_for('index') }}">Home</a>
+      {% if current_user.is_authenticated %}
+        <a href="{{ url_for('logout') }}">Logout</a>
+      {% else %}
+        <a href="{{ url_for('login') }}">Login</a>
+      {% endif %}
+      <a href="{{ url_for('settings') }}">Settings</a>
+      </p>
+    </div>
+  {% endblock %}
+  {% block content %}
+  {% endblock %}
+  <div>
+    {% block footer %}
+    {% endblock %}
+  </div>
+</body>
+
+</html>

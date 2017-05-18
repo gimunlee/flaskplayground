@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+{% if not is_logged_in %}
+  <p>Please sign in as the administrator for control the table</p>
+{% endif %}
+<p>There are {{ count }} rows in the db</p>
+<table class="weather">
+  <tr>
+    <th>날짜</th>
+    <th>지역</th>
+    <th>강수량</th>
+    <th>평균 눈</th>
+    <th>최저온도</th>
+    <th>최고온도</th>
+    <th>평균온도</th>
+  </tr>
+  {% for row in weather_table %}
+    <tr>
+    {% for cell in row %}
+      <td>{{ cell }}</td>
+    {% endfor %}
+    </tr>
+  {% else %}
+    <tr><td colspan=7 style="text-align: center">비었음</td></tr>
+  {% endfor %}
+</table>
+{% endblock %}

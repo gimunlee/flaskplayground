@@ -1,0 +1,26 @@
+.flashes {
+    background-color: pink;
+}
+.header {
+    background-color: lightblue;
+}
+table.weather {
+    margin: 10px 10px;
+    border-top: 1px solid;
+    border-left: 1px solid;
+    border-collapse: collapse;
+    border: 1px solid;
+}
+table.weather th {
+    font-weight: bold;
+    background-color: lightblue;
+    padding: 10px
+}
+table.weather td {
+    border-left: 1px solid;
+    padding: 10px;
+    text-align: right
+}
+table.weather tr:nth-child(even) {
+    background: #cdf8ff
+}
