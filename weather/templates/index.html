@@ -1,9 +1,19 @@
 {% extends "layout.html" %}
 {% block content %}
-{% if not is_logged_in %}
+{% if not current_user.is_authenticated %}
   <p>Please sign in as the administrator for control the table</p>
 {% endif %}
 <p>There are {{ count }} rows in the db</p>
+<p>Now showing {{ page_current_index * page_size + 1 }}-{{ page_current_index * page_size + page_size }}</p>
+<p>
+  {% for i in page_indexes %}
+    {% if i == page_current_index %}
+      {{ i }}
+    {% else %}
+      <a href="{{ url_for('index', pagesize=page_size, pageindex=i) }}">{{ i }}</a>
+    {% endif %}
+  {% endfor %}</p>
+<p> page size <a href="{{ url_for('index', pagesize=10, pageindex=page_current_index) }}">10</a> <a href="{{ url_for('index', pagesize=20, pageindex=page_current_index) }}">20</a></p>
 <table class="weather">
   <tr>
     <th>날짜</th>

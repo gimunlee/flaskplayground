@@ -1,0 +1,26 @@
+{
+    "remotePath": "./flaskplayground/weather/",
+    "host": "13.124.75.135",
+    "username": "lgm",
+    "password": "q@araqudrn205",
+    "port": 22,
+    "secure": true,
+    "protocol": "sftp",
+    "uploadOnSave": true,
+    "passive": false,
+    "debug": true,
+    "privateKeyPath": null,
+    "passphrase": null,
+    "ignore": [
+        "/.vscode",
+        "/.git",
+        "/gimunvenv",
+        "/.DS_Store",
+        "/.sqlite3"
+    ],
+    "generatedFiles": {
+        "uploadOnSave": true,
+        "extensionsToInclude": [],
+        "path": ""
+    }
+}
