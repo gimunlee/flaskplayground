@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Scripts test</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  {% block head %}
+  {% endblock %}
+</head>
+
+<body>
+  {% block msgs %}
+  {% with msgs = get_flashed_messages() %}
+    {% if msgs %}
+    <ul class="flashes">
+      {% for msg in msgs %}
+        <li>{{ msg }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  {% endwith %}
+  {% endblock %}
+
+  <div class="header">
+  {% block header %}
+  {% endblock %}
+  </div>
+
+  {% block content %}
+  {% endblock %}
+  <div>
+    {% block footer %}
+    {% endblock %}
+  </div>
+</body>
+
+</html>
