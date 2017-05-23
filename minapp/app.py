@@ -34,5 +34,5 @@ def index():
     return render_template('index.html', msg="Hello")
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(port=app.config.get('port') or 5000, debug=True)
     
