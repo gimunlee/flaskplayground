@@ -1,6 +1,8 @@
 // Place your settings in this file to overwrite default and user settings.
 {
-    "python.linting.pylintPath": "${workspaceRoot}/../venv/Scripts/pylint.exe",
-    "python.venvPath": "${workspaceRoot}/../venv",
-    "python.pythonPath": "${workspaceRoot}/../venv/Scripts/python.exe"
+    "python.linting.pylintPath": "python",
+    "python.linting.pylintArgs": [
+        "-m",
+        "pylint"
+    ]
 }
